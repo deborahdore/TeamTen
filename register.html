@@ -7,8 +7,11 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
 	  <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	  <script type="text/javascript" src="js/bootstrap.min.js"></script>
 	  <script type="text/javascript" src='js/main.js'></script>
+    <script type="text/javascript" src='js/register.js'></script>
+
 </head>
 <body class="bg-gradient-primary">
 
@@ -39,15 +42,17 @@
                     </div>
 
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="pass1" placeholder="Password">
+                      <input type="password" class="form-control form-control-user" id="password" placeholder="Password">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="pass2" placeholder="Confirm Password">
+                      <input type="password" class="form-control form-control-user" id="confirm-password" placeholder="Confirm Password">
                     </div>
 										<div  class="btn btn-block">  </div>
 
+                    <div id="register-alert" class="alert alert-danger" role="alert">  </div>
+                    <div id="register-success" class="alert alert-success">  </div>
 
-                    <a id="register-button" href="index.html" class="btn btn-primary btn-user btn-block">
+                    <a id="register-button" class="btn btn-primary btn-user btn-block">
                       Register
                     </a>
 
