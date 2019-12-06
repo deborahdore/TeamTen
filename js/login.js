@@ -12,9 +12,9 @@ console.log("isCityHall="+isCityHall);
 var user = localStorage.getItem("user");
 if(user !== null){
   if(isCityHall === "true"){
-   window.location.href="home_hall.html";
+   //window.location.href="home_hall.html";
  }else{
-    window.location.href="home_android.html";
+    //window.location.href="home_android.html";
  }
 }
 
