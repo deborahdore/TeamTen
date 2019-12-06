@@ -7,6 +7,11 @@ $(document).ready(function(){
     window.location.href="home_android.html";
   });
 
+  $("#multiple_input_group").change(function(){
+    //get just filename from full path
+    $("#file-name").html($("#multiple_input_group").val().replace(/^.*[\\\/]/, ''));
+  });
+
 
   $("#submit-problem-button").click(function(){
     //send data to server...
@@ -57,14 +62,9 @@ $(document).ready(function(){
   });
 
 
-
-   isCityHall = localStorage.getItem("isCityHall");
-   if(isCityHall === "true"){
-
-   }else{
-
-   }
-
-    $('#example').DataTable();
+  //sorting off
+  $('#example').dataTable( {
+   "aaSorting": []
+  });
 
 })

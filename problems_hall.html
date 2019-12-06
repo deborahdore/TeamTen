@@ -8,6 +8,8 @@
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<link rel="stylesheet" type="text/css" href="css/problems.css">
+		<link rel="stylesheet" type="text/css" href="css/problems-hall.css">
+
 	  <script type="text/javascript" src="js/jquery.min.js"></script>
 		<script src = "http://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
 		<script src = "http://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
@@ -21,7 +23,7 @@
 <body class="bg-gradient-primary">
 
 
-	<div class="">
+	<div class="container">
 
     <!-- Outer Row -->
     <div class="row justify-content-center">
@@ -47,6 +49,29 @@
                   </div>
 
 										<div  class="btn  btn-block">  </div>
+
+
+
+										<!-- Modal -->
+								<div class="modal fade" id="photos-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+									<div class="modal-dialog" role="document">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title" id="exampleModalLabel">Photos</h5>
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+													<span aria-hidden="true">&times;</span>
+												</button>
+											</div>
+											<div id="photos-body" class="modal-body">
+
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+
+
 
 						<!-- Modal -->
 				<div class="modal fade" id="reprioritize-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -93,12 +118,14 @@
 														<th>Date</th>
 														<th>Status</th>
 														<th>Priority</th>
+														<th style="display: none"></th>
+														<th style="display: none"></th>
 												</tr>
 										</thead>
 										<tbody id="problems-table-body">
-												<tr>
+												<tr id="row-1">
 														<td>Dangerous Lion</td>
-														<td>Lion escaped frpm zoo</td>
+														<td>Lion escaped from zoo</td>
 														<td>Public Danger</td>
 														<td>61</td>
 														<td>Observator</td>
@@ -106,21 +133,21 @@
 														<td>UNSOLVED</td>
 														<td class="td-priority">HIGH</td>
 														<td><button id="reprioritize-button-1" type="button" class="reprioritize-button btn btn-info">Reprioritize</button></td>
-														<td><button id="photos-button" type="button" class="btn btn-info">Photos</button></td>
+														<td><button id="photos-button-1" type="button" class="photos-button btn btn-info">Photos</button></td>
 												</tr>
-												<tr>
-														<td>Garrett Winters</td>
-														<td>Accountant</td>
-														<td>Public Danger</td>
+												<tr id="row-2">
+														<td>Clean City Park</td>
+														<td>Everybody can help</td>
+														<td>Other</td>
 														<td>63</td>
-														<td>Dorobantilor</td>
+														<td>City Centre</td>
 														<td>2019/10/01</td>
 														<td>UNSOLVED</td>
 														<td class="td-priority">HIGH</td>
 														<td><button id="reprioritize-button-2" type="button" class="reprioritize-button btn btn-info">Reprioritize</button></td>
-														<td><button id="photos-button" type="button" class="btn btn-info">Photos</button></td>
+														<td><button id="photos-button-2" type="button" class="photos-button btn btn-info">Photos</button></td>
 												</tr>
-												<tr>
+												<tr id="row-3">
 														<td>Ashton Cox</td>
 														<td>Junior Technical Author</td>
 														<td>Public Danger</td>
@@ -130,9 +157,9 @@
 														<td>UNSOLVED</td>
 														<td class="td-priority">HIGH</td>
 														<td><button id="reprioritize-button-3" type="button" class="reprioritize-button btn btn-info">Reprioritize</button></td>
-														<td><button id="photos-button" type="button" class="btn btn-info">Photos</button></td>
+														<td><button id="photos-button-3" type="button" class="photos-button btn btn-info">Photos</button></td>
 												</tr>
-												<tr>
+												<tr id="row-4">
 														<td>Cedric Kelly</td>
 														<td>Senior Javascript Developer</td>
 														<td>Public Danger</td>
@@ -142,9 +169,9 @@
 														<td>UNSOLVED</td>
 														<td class="td-priority">HIGH</td>
 														<td><button id="reprioritize-button-4" type="button" class="reprioritize-button btn btn-info">Reprioritize</button></td>
-														<td><button id="photos-button" type="button" class="btn btn-info">Photos</button></td>
+														<td><button id="photos-button-4" type="button" class="photos-button btn btn-info">Photos</button></td>
 												</tr>
-												<tr>
+												<tr id="row-5">
 														<td>Airi Satou</td>
 														<td>Accountant</td>
 														<td>Public Danger</td>
@@ -154,9 +181,9 @@
 														<td>UNSOLVED</td>
 														<td class="td-priority">HIGH</td>
 														<td><button id="reprioritize-button-5" type="button" class="reprioritize-button btn btn-info">Reprioritize</button></td>
-														<td><button id="photos-button" type="button" class="btn btn-info">Photos</button></td>
+														<td><button id="photos-button-5" type="button" class="photos-button btn btn-info">Photos</button></td>
 												</tr>
-												<tr>
+												<tr id="row-6">
 														<td>Brielle Williamson</td>
 														<td>Integration Specialist</td>
 														<td>Public Danger</td>
@@ -166,9 +193,9 @@
 														<td>UNSOLVED</td>
 														<td class="td-priority">HIGH</td>
 														<td><button id="reprioritize-button-6" type="button" class="reprioritize-button btn btn-info">Reprioritize</button></td>
-														<td><button id="photos-button" type="button" class="btn btn-info">Photos</button></td>
+														<td><button id="photos-button-6" type="button" class="photos-button btn btn-info">Photos</button></td>
 												</tr>
-												<tr>
+												<tr id="row-7">
 														<td>Herrod Chandler</td>
 														<td>Sales Assistant</td>
 														<td>Public Danger</td>
@@ -178,9 +205,9 @@
 														<td>UNSOLVED</td>
 														<td class="td-priority">LOW</td>
 														<td><button id="reprioritize-button-7" type="button" class="reprioritize-button btn btn-info">Reprioritize</button></td>
-														<td><button id="photos-button" type="button" class="btn btn-info">Photos</button></td>
+														<td><button id="photos-button-7" type="button" class="photos-button btn btn-info">Photos</button></td>
 												</tr>
-												<tr>
+												<tr id="row-8">
 														<td>Rhona Davidson</td>
 														<td>Integration Specialist</td>
 														<td>Public Event</td>
@@ -190,9 +217,9 @@
 														<td>UNSOLVED</td>
 														<td class="td-priority">LOW</td>
 														<td><button id="reprioritize-button-8" type="button" class="reprioritize-button btn btn-info">Reprioritize</button></td>
-														<td><button id="photos-button" type="button" class="btn btn-info">Photos</button></td>
+														<td><button id="photos-button-8" type="button" class="photos-button btn btn-info">Photos</button></td>
 												</tr>
-												<tr>
+												<tr id="row-9">
 														<td>Colleen Hurst</td>
 														<td>Javascript Developer</td>
 														<td>Public Event</td>
@@ -202,9 +229,9 @@
 														<td>SOLVED</td>
 														<td class="td-priority">LOW</td>
 														<td><button id="reprioritize-button-9" type="button" class="reprioritize-button btn btn-info">Reprioritize</button></td>
-														<td><button id="photos-button" type="button" class="btn btn-info">Photos</button></td>
+														<td><button id="photos-button-9" type="button" class="photos-button btn btn-info">Photos</button></td>
 												</tr>
-												<tr>
+												<tr id="row-10">
 														<td>Sonya Frost</td>
 														<td>Software Engineer</td>
 														<td>Public Event</td>
@@ -214,9 +241,9 @@
 														<td>SOLVED</td>
 														<td class="td-priority">LOW</td>
 														<td><button id="reprioritize-button-10" type="button" class="reprioritize-button btn btn-info">Reprioritize</button></td>
-														<td><button id="photos-button" type="button" class="btn btn-info">Photos</button></td>
+														<td><button id="photos-button-10" type="button" class="photos-button btn btn-info">Photos</button></td>
 												</tr>
-												<tr>
+												<tr id="row-11">
 														<td>Jena Gaines</td>
 														<td>Office Manager</td>
 														<td>Public Event</td>
@@ -226,9 +253,9 @@
 														<td>SOLVED</td>
 														<td class="td-priority">LOW</td>
 														<td><button id="reprioritize-button-11" type="button" class="reprioritize-button btn btn-info">Reprioritize</button></td>
-														<td><button id="photos-button" type="button" class="btn btn-info">Photos</button></td>
+														<td><button id="photos-button-11" type="button" class="photos-button btn btn-info">Photos</button></td>
 												</tr>
-												<tr>
+												<tr id="row-12">
 														<td>Quinn Flynn</td>
 														<td>Support Lead</td>
 														<td>Other</td>
@@ -238,7 +265,7 @@
 														<td>SOLVED</td>
 														<td class="td-priority">LOW</td>
 														<td><button id="reprioritize-button-12" type="button" class="reprioritize-button btn btn-info">Reprioritize</button></td>
-														<td><button id="photos-button" type="button" class="btn btn-info">Photos</button></td>
+														<td><button id="photos-button-12" type="button" class="photos-button btn btn-info">Photos</button></td>
 												</tr>
 
 
