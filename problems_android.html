@@ -11,7 +11,7 @@
 	  <script type="text/javascript" src="js/jquery.min.js"></script>
 		<script src = "http://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
 		<script src = "http://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
-
+		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	  <script type="text/javascript" src="js/bootstrap.min.js"></script>
 	  <script type="text/javascript" src='js/main.js'></script>
@@ -33,7 +33,13 @@
             <!-- Nested Row within Card Body -->
             <div class="row">
               <div class="col-lg-12">
+								<div class="text-right">
+										 <a id="problems-back-button" class="btn btn-info btn-sm mb-3">
+											 <i class="fa fa-arrow-left" aria-hidden="true"></i>
+											Back
+										 </a>
 
+								 </div>
 
                 <div class="p-5">
                   <div class="text-center">
@@ -44,24 +50,87 @@
 
 
 										<!-- Modal -->
-	<div id="myModal" class="modal fade" role="dialog">
+	<div id="submit-problem-modal" class="modal fade" role="dialog">
 	  <div class="modal-dialog">
 
 	    <!-- Modal content-->
 	    <div class="modal-content">
 	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal">&times;</button>
-	        <h4 class="modal-title">Modal Header</h4>
+	         <h4 class="modal-title">Submit Problem</h4>
+					 <button type="button" class="close" data-dismiss="modal">&times;</button>
 	      </div>
 	      <div class="modal-body">
-	        <p>Some text in the modal.</p>
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	      </div>
-	    </div>
+						<form>
+									  <div class="form-group">
+									    <label for="problem-title">Title</label>
+									    <input type="text" class="form-control" id="problem-title" placeholder="">
+									  </div>
+										<div class="form-group">
+										 <label for="problem-description">Description</label>
+										<textarea class="form-control" id="problem-description" rows="2"></textarea>
+									 </div>
+									  <div class="form-group">
+									    <label for="problem-category">Category</label>
+											<select id="problem-category" class="form-control form-control-lg">
+											  <option>Trash</option>
+												<option>Public Danger</option>
+												<option>Public Event</option>
+												<option>Other</option>
+											</select>
+									  </div>
+										<div class="form-group">
+									    <label for="problem-location">Location</label>
+											<select id="problem-location" class="form-control form-control-lg">
+											  <option>Grigorescu</option>
+												<option>City Centre</option>
+												<option>Gruia</option>
+											</select>
+									  </div>
+										<div class="form-group">
+											<label for="problem-priority">Priority</label>
+											<select id="problem-priority" class="form-control form-control-lg">
+												<option>HIGH</option>
+												<option>MEDIUM</option>
+												<option>LOW</option>
+											</select>
+										</div>
+										<div class="input-group">
+						              <span class="input-group-btn">
+						                <label class="btn btn-primary btn-file" for="multiple_input_group">
+						                  <div class="input required"><input id="multiple_input_group" type="file" multiple></div> Select Photo
+						                </label>
+						              </span>
 
+						            </div>
+
+						        </div>
+
+											<button id="submit-problem-button" type="button" class="btn btn-info">Send</button>
+							</form>
+
+	      </div>
+
+	    </div>
 	  </div>
+
+						<!-- Modal -->
+				<div class="modal fade" id="message-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="exampleModalLabel">Message</h5>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div id="message-body" class="modal-body">
+
+				      </div>
+				    </div>
+				  </div>
+				</div>
+
+
 	</div>
 
 									<div  style="overflow-y: scroll;">
@@ -76,7 +145,7 @@
 									                <th>Priority</th>
 									            </tr>
 									        </thead>
-									        <tbody>
+									        <tbody id="problems-table-body">
 									            <tr>
 									                <td>Dangerous Lion</td>
 									                <td>Lion escaped frpm zoo</td>
@@ -193,7 +262,7 @@
                   <hr>
 
 
-									<a id="submit-problem-button" class="btn btn-primary btn-user btn-block" data-toggle="modal" data-target="#myModal">
+									<a id="submit-problem-button" class="btn btn-primary btn-user btn-block" data-toggle="modal" data-target="#submit-problem-modal">
 										Submit problem
 									</a>
 									<a id="find-nearby-problem-button" class="btn btn-primary btn-user btn-block">
