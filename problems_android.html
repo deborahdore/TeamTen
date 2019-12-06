@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Smart City</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/problems.css">
+		<link rel="stylesheet" type="text/css" href="css/upload-file.css">
+	  <script type="text/javascript" src="js/jquery.min.js"></script>
+		<script src = "http://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+		<script src = "http://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+		<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	  <script type="text/javascript" src='js/main.js'></script>
+		<script type="text/javascript" src='js/redirect.js'></script>
+		<script type="text/javascript" src='js/problems.js'></script>
+</head>
+<body class="bg-gradient-primary">
+
+
+	<div class="container">
+
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+      <div class="col-xl-6 col-lg-6 col-md-6">
+
+        <div class="card my-5">
+          <div class="card-body">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+              <div class="col-lg-12">
+								<div class="text-right">
+										 <a id="problems-back-button" class="btn btn-info btn-sm mb-3">
+											 <i class="fa fa-arrow-left" aria-hidden="true"></i>
+											Back
+										 </a>
+
+								 </div>
+
+                <div class="p-5">
+                  <div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-4">City Problems</h1>
+                  </div>
+
+										<div  class="btn  btn-block">  </div>
+
+
+										<!-- Modal -->
+	<div id="submit-problem-modal" class="modal fade" role="dialog">
+	  <div class="modal-dialog">
+
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	         <h4 class="modal-title">Submit Problem</h4>
+					 <button type="button" class="close" data-dismiss="modal">&times;</button>
+	      </div>
+	      <div class="modal-body">
+						<form>
+									  <div class="form-group">
+									    <label for="problem-title">Title</label>
+									    <input type="text" class="form-control" id="problem-title" placeholder="">
+									  </div>
+										<div class="form-group">
+										 <label for="problem-description">Description</label>
+										<textarea class="form-control" id="problem-description" rows="2"></textarea>
+									 </div>
+									  <div class="form-group">
+									    <label for="problem-category">Category</label>
+											<select id="problem-category" class="form-control form-control-lg">
+											  <option>Trash</option>
+												<option>Public Danger</option>
+												<option>Public Event</option>
+												<option>Other</option>
+											</select>
+									  </div>
+										<div class="form-group">
+									    <label for="problem-location">Location</label>
+											<select id="problem-location" class="form-control form-control-lg">
+											  <option>Grigorescu</option>
+												<option>City Centre</option>
+												<option>Gruia</option>
+											</select>
+									  </div>
+										<div class="form-group">
+											<label for="problem-priority">Priority</label>
+											<select id="problem-priority" class="form-control form-control-lg">
+												<option>HIGH</option>
+												<option>MEDIUM</option>
+												<option>LOW</option>
+											</select>
+										</div>
+										<div class="input-group">
+						              <span class="input-group-btn">
+						                <label class="btn btn-primary btn-file" for="multiple_input_group"><span id="file-name">	</span>
+						                  <div class="input required"><input id="multiple_input_group" type="file" multiple></div> Select Photo
+						                </label>
+						              </span>
+
+						            </div>
+
+						        </div>
+
+											<button id="submit-problem-button" type="button" class="btn btn-info">Send</button>
+							</form>
+
+	      </div>
+
+	    </div>
+	  </div>
+
+						<!-- Modal -->
+				<div class="modal fade" id="message-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="exampleModalLabel">Message</h5>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div id="message-body" class="modal-body">
+
+				      </div>
+				    </div>
+				  </div>
+				</div>
+
+
+
+
+
+				<!-- Modal -->
+		<div class="modal fade" id="more-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">More Details</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div id="more-body" class="modal-body">
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+									<div  style="overflow-y: scroll;">
+									<table id="example" class="table table-striped table-bordered">
+									        <thead>
+									            <tr>
+									                <th>Title</th>
+									                <th>Description</th>
+									                <th>Category</th>
+									                <th>Upvotes</th>
+									                <th>Location</th>
+									                <th>Priority</th>
+																	<th style="display: none"></th>
+									            </tr>
+									        </thead>
+									        <tbody id="problems-table-body">
+									            <tr>
+									                <td>Dangerous Lion</td>
+									                <td>Lion escaped from zoo</td>
+									                <td>Public Danger</td>
+									                <td>61</td>
+									                <td>Observator</td>
+									                <td>HIGH</td>
+																	<td><button id="more-button-1" type="button" class="more-button btn btn-info">More</button></td>
+									            </tr>
+									            <tr>
+																	<td>Clean City Park</td>
+																	<td>Everybody can help</td>
+																	<td>Other</td>
+																	<td>63</td>
+																	<td>City Centre</td>
+									                <td>HIGH</td>
+																	<td><button id="more-button-2" type="button" class="more-button btn btn-info">More</button></td>
+									            </tr>
+									            <tr>
+									                <td>Ashton Cox</td>
+									                <td>Junior Technical Author</td>
+									                <td>Public Danger</td>
+									                <td>66</td>
+									                <td>Observator</td>
+									                <td>HIGH</td>
+																	<td><button id="more-button-3" type="button" class="more-button btn btn-info">More</button></td>
+									            </tr>
+									            <tr>
+									                <td>Cedric Kelly</td>
+									                <td>Senior Javascript Developer</td>
+									                <td>Public Danger</td>
+									                <td>22</td>
+									                <td>Gruia</td>
+									                <td>HIGH</td>
+																	<td><button id="more-button-4" type="button" class="more-button btn btn-info">More</button></td>
+									            </tr>
+									            <tr>
+									                <td>Airi Satou</td>
+									                <td>Accountant</td>
+									                <td>Public Danger</td>
+									                <td>33</td>
+									                <td>Gruia</td>
+									                <td>HIGH</td>
+																	<td><button id="more-button-5" type="button" class="more-button btn btn-info">More</button></td>
+									            </tr>
+									            <tr>
+									                <td>Brielle Williamson</td>
+									                <td>Integration Specialist</td>
+									                <td>Public Danger</td>
+									                <td>61</td>
+									                <td>Gruia</td>
+									                <td>HIGH</td>
+																	<td><button id="more-button-6" type="button" class="more-button btn btn-info">More</button></td>
+									            </tr>
+									            <tr>
+									                <td>Herrod Chandler</td>
+									                <td>Sales Assistant</td>
+									                <td>Public Danger</td>
+									                <td>59</td>
+									                <td>Gruia</td>
+									                <td>LOW</td>
+																		<td><button id="more-button-7" type="button" class="more-button btn btn-info">More</button></td>
+									            </tr>
+									            <tr>
+									                <td>Rhona Davidson</td>
+									                <td>Integration Specialist</td>
+									                <td>Public Event</td>
+									                <td>55</td>
+									                <td>Gruia</td>
+									                <td>LOW</td>
+																		<td><button id="more-button-8" type="button" class="more-button btn btn-info">More</button></td>
+									            </tr>
+									            <tr>
+									                <td>Colleen Hurst</td>
+									                <td>Javascript Developer</td>
+									                <td>Public Event</td>
+									                <td>39</td>
+									                <td>Grigorescu</td>
+									                <td>LOW</td>
+																		<td><button id="more-button-9" type="button" class="more-button btn btn-info">More</button></td>
+									            </tr>
+									            <tr>
+									                <td>Sonya Frost</td>
+									                <td>Software Engineer</td>
+									                <td>Public Event</td>
+									                <td>23</td>
+									                <td>Gruia</td>
+									                <td>LOW</td>
+																		<td><button id="more-button-10" type="button" class="more-button btn btn-info">More</button></td>
+									            </tr>
+									            <tr>
+									                <td>Jena Gaines</td>
+									                <td>Office Manager</td>
+									                <td>Public Event</td>
+									                <td>30</td>
+									                <td>Grigorescu</td>
+									                <td>LOW</td>
+																		<td><button id="more-button-11" type="button" class="more-button btn btn-info">More</button></td>
+									            </tr>
+									            <tr>
+									                <td>Quinn Flynn</td>
+									                <td>Support Lead</td>
+									                <td>Other</td>
+									                <td>22</td>
+									                <td>Grigorescu</td>
+									                <td>LOW</td>
+																	<td><button id="more-button-12" type="button" class="more-button btn btn-info">More</button></td>
+									            </tr>
+
+
+									        </tbody>
+									        <tfoot>
+									            <tr>
+									                <th>Title</th>
+									                <th>Description</th>
+									                <th>Category</th>
+									                <th>Upvotes</th>
+									                <th>Location</th>
+									                <th>Priority</th>
+									            </tr>
+									        </tfoot>
+									    </table>
+											</div>
+
+
+                  <hr>
+
+
+									<a id="submit-problem-button" class="btn btn-primary btn-user btn-block" data-toggle="modal" data-target="#submit-problem-modal">
+										Submit problem
+									</a>
+									<a id="find-nearby-problem-button" class="btn btn-primary btn-user btn-block">
+										Find nearby problem
+									</a>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

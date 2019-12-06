@@ -18,6 +18,11 @@ if(user !== null){
 }
 
 
+ $("#multiple_input_group").change(function(){
+   //get just filename from full path
+   $("#file-name").html($("#multiple_input_group").val().replace(/^.*[\\\/]/, ''));
+ });
+
 
  $("#register-button").click(function(){
    $("#register-alert").hide();
@@ -27,6 +32,8 @@ if(user !== null){
    var name = $("#name").val();
    var password = $("#password").val();
    var confirmPassword = $("#confirm-password").val();
+   var file = $("#multiple_input_group").val();
+   //console.log(file);
 
    var displayErrors = ""
    var errors = []
@@ -38,6 +45,10 @@ if(user !== null){
 
    if(email.length === 0){
      errors.push("Email must not be empty!");
+   }
+
+   if(file.length === 0){
+     errors.push("You must upload a photo!");
    }
 
    if(password === confirmPassword){
