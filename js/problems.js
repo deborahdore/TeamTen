@@ -1,4 +1,4 @@
-
+var incrId = 12;
 
 $(document).ready(function(){
 
@@ -12,6 +12,55 @@ $(document).ready(function(){
     $("#file-name").html($("#multiple_input_group").val().replace(/^.*[\\\/]/, ''));
   });
 
+  //works for dynamic elements
+  $(document).on("click",".more-button", function(){
+    $("#more-modal").modal();
+
+    var selected = this.id.replace('more-button-','');
+    console.log(selected);
+
+    var date = "";
+    var photo = "";
+    if(selected === "1"){
+      date = "2019/11/01";
+      photo = "https://www.freeiconspng.com/uploads/lion-icon-6.png";
+    }else if(selected === "2"){
+      date = "2019/10/01";
+      photo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiG98-3YswD7lA2a9OeXeAmwcrvdVV7ixmBJKJZcUGKoO4ANJcEQ&s";
+    }else if(selected === "13"){
+      var dateObj = new Date();
+      var month = dateObj.getUTCMonth() + 1;
+      var day = dateObj.getUTCDate();
+      var year = dateObj.getUTCFullYear();
+      date = year + "/" + month + "/" + day;
+      photo = "./images/city.png";
+    }
+
+    if(photo.length > 0){
+        $("#more-body").html(`
+          <form>
+            <div class="form-group">
+             <label for="problem-description">Date</label>
+             <input disabled class="form-control" id="problem-description" placeholder="` + date + `" rows="2"/>
+           </div>
+           <div class="form-group">
+            <label for="problem-description">Photo</label>
+            <img src="`+ photo +`"
+             alt="img" width="100%" height="333"
+          </div>
+          </form>
+         `);
+     }else{
+       $("#more-body").html(`
+         <form>
+           <div class="form-group">
+            <label for="problem-description">Date</label>
+            <input disabled class="form-control" id="problem-description" placeholder="` + date + `" rows="2"/>
+          </div>
+         </form>
+        `);
+     }
+  });
 
   $("#submit-problem-button").click(function(){
     //send data to server...
@@ -38,7 +87,7 @@ $(document).ready(function(){
 
       $("#submit-problem-modal").modal('hide');
 
-
+      incrId++;
       //apend to table
       $("#problems-table-body").prepend(`
         <tr>
@@ -48,6 +97,7 @@ $(document).ready(function(){
             <td>0</td>
             <td>`+location+`</td>
             <td>`+priority+`</td>
+            <td><button id="more-button-` + incrId+`" type="button" class="more-button btn btn-info">More</button></td>
         </tr>
         `);
    }else{
