@@ -181,12 +181,12 @@ $(document).ready(function(){
 
                       $("#submit-new-pass").click(function(){
                           var pass = $("#new-pass").val();
-                          
+
                           var dateObj = new Date();
                           var month = dateObj.getUTCMonth() + 1;
                           var day = dateObj.getUTCDate();
                           var year = dateObj.getUTCFullYear();
-                          date = year + "/" + month + "/" + day;
+                          date = day + "/" + month + "/" + year;
 
                           $("#wifi-modal-pass").modal('hide');
                           $("#problems-table-body").append(`
