@@ -20,4 +20,8 @@ $(document).ready(function(){
    $("#trash-report").click(() => {
     window.location.href="trash_report.html";
    })
+
+   $("#register-requests-button").click(() => {
+     window.location.href="register_volunteer.html";
+   })
 })
