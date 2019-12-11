@@ -21,6 +21,9 @@ $(document).ready(function(){
     window.location.href="trash_report.html";
    })
 
+   $("#traffic-info").click(function(){
+     window.location.href="traffic_info.html";
+   })
    $("#register-requests-button").click(() => {
      window.location.href="register_volunteer.html";
    })
