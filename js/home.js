@@ -16,4 +16,8 @@ $(document).ready(function(){
        window.location.href="problems_android.html";
      }
     });
+
+   $("#trash-report").click(() => {
+    window.location.href="trash_report.html";
+   })
 })
