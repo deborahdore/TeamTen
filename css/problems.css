@@ -1,3 +1,22 @@
 a {
   background-color: rgb(0,125,255);
 }
+
+td {
+ font-size: 13px;
+}
+
+th {
+  font-size: 13px;
+}
+
+.btn-group-xs > .btn, .btn-xs {
+  padding: .25rem .4rem;
+  font-size: .875rem;
+  line-height: .5;
+  border-radius: .2rem;
+}
+
+.more-button {
+  font-size: 13px;
+}

@@ -19,7 +19,6 @@ $(document).ready(function(){
     var selected = this.id.replace('more-button-','');
     console.log(selected);
 
-    var date = "";
     var photo = "";
     var description = "";
     var location = "";
@@ -27,39 +26,28 @@ $(document).ready(function(){
     var upvotes = "";
 
     if(selected === "1"){
-      date = "2019/11/01";
       photo = "https://www.freeiconspng.com/uploads/lion-icon-6.png";
       description = "Lion escaped from zoo";
       location = "Observator";
       priority = "HIGH";
       upvotes = "61";
     }else if(selected === "2"){
-      date = "2019/10/01";
       photo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiG98-3YswD7lA2a9OeXeAmwcrvdVV7ixmBJKJZcUGKoO4ANJcEQ&s";
       description = "Everybody can help";
       location = "City Centre";
       priority = "HIGH";
         upvotes = "63";
     }else if(selected === "13"){
-      var dateObj = new Date();
-      var month = dateObj.getUTCMonth() + 1;
-      var day = dateObj.getUTCDate();
-      var year = dateObj.getUTCFullYear();
-      date = year + "/" + month + "/" + day;
       photo = "./images/city.png";
       description = "description";
       location = "Gruia";
       priority = "HIGH";
-        upvotes = "67";
+      upvotes = "0";
     }
 
     if(photo.length > 0){
         $("#more-body").html(`
           <form>
-            <div class="form-group">
-             <label for="problem-description">Date</label>
-             <input disabled class="form-control" id="problem-description" placeholder="` + date + `" rows="2"/>
-           </div>
            <div class="form-group">
             <label for="problem-description2">Description</label>
             <textarea disabled class="form-control" id="problem-description2" placeholder="` + description + `" rows="2"/>
@@ -86,10 +74,22 @@ $(document).ready(function(){
      }else{
        $("#more-body").html(`
          <form>
-           <div class="form-group">
-            <label for="problem-description">Date</label>
-            <input disabled class="form-control" id="problem-description" placeholder="` + date + `" rows="2"/>
-          </div>
+         <div class="form-group">
+          <label for="problem-description2">Description</label>
+          <textarea disabled class="form-control" id="problem-description2" placeholder="` + description + `" rows="2"/>
+        </div>
+        <div class="form-group">
+         <label for="problem-location">Location</label>
+         <input disabled class="form-control" id="problem-location" placeholder="` + location + `" rows="2"/>
+       </div>
+       <div class="form-group">
+        <label for="problem-priority">Priority</label>
+        <input disabled class="form-control" id="problem-priority" placeholder="` + priority + `" rows="2"/>
+      </div>
+      <div class="form-group">
+       <label for="problem-priority">Upvotes</label>
+       <input disabled class="form-control" id="problem-priority" placeholder="` + upvotes + `" rows="2"/>
+     </div>
          </form>
         `);
      }
@@ -102,6 +102,12 @@ $(document).ready(function(){
     var priority = $("#problem-priority").val();
     var title = $("#problem-title").val();
     var description = $("#problem-description").val();
+    var dateObj = new Date();
+    var month = dateObj.getUTCMonth() + 1;
+    var day = dateObj.getUTCDate();
+    var year = dateObj.getUTCFullYear();
+
+    var date = (year.toString()).substring(2,4) + "/" + month + "/" + day;
 
     console.log(category);
     var errors = ""
@@ -121,18 +127,26 @@ $(document).ready(function(){
       $("#submit-problem-modal").modal('hide');
 
       incrId++;
+
       //apend to table
-      $("#problems-table-body").prepend(`
-        <tr>
-            <td>`+ title +`</td>
-            <td>`+description+`</td>
-            <td>`+category+`</td>
-            <td>0</td>
-            <td>`+location+`</td>
-            <td>`+priority+`</td>
-            <td><button id="more-button-` + incrId+`" type="button" class="more-button btn btn-info">More</button></td>
-        </tr>
-        `);
+      var tablee = $('#example').DataTable();   ;
+      tablee.row.add( [
+           title,
+          category,
+           date,
+           `<button id="more-button-` + incrId+`" type="button" class="more-button btn-xs btn-info">More</button>`
+       ] ).draw( false );
+      // $("#problems-table-body").prepend(`
+      //   <tr>
+      //       <td>`+ title +`</td>
+      //       <td>`+category+`</td>
+      //       <td>`+date+`</td>
+      //       <td><button id="more-button-` + incrId+`" type="button" class="more-button btn-xs btn-info">More</button></td>
+      //   </tr>
+      //   `);
+
+        //update dataTable
+        $('#example').DataTable().draw();
    }else{
 
      $("#message-modal").modal();
