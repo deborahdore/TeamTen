@@ -21,12 +21,25 @@ $(document).ready(function(){
 
     var date = "";
     var photo = "";
+    var description = "";
+    var location = "";
+    var priority = "";
+    var upvotes = "";
+
     if(selected === "1"){
       date = "2019/11/01";
       photo = "https://www.freeiconspng.com/uploads/lion-icon-6.png";
+      description = "Lion escaped from zoo";
+      location = "Observator";
+      priority = "HIGH";
+      upvotes = "61";
     }else if(selected === "2"){
       date = "2019/10/01";
       photo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiG98-3YswD7lA2a9OeXeAmwcrvdVV7ixmBJKJZcUGKoO4ANJcEQ&s";
+      description = "Everybody can help";
+      location = "City Centre";
+      priority = "HIGH";
+        upvotes = "63";
     }else if(selected === "13"){
       var dateObj = new Date();
       var month = dateObj.getUTCMonth() + 1;
@@ -34,6 +47,10 @@ $(document).ready(function(){
       var year = dateObj.getUTCFullYear();
       date = year + "/" + month + "/" + day;
       photo = "./images/city.png";
+      description = "description";
+      location = "Gruia";
+      priority = "HIGH";
+        upvotes = "67";
     }
 
     if(photo.length > 0){
@@ -43,6 +60,22 @@ $(document).ready(function(){
              <label for="problem-description">Date</label>
              <input disabled class="form-control" id="problem-description" placeholder="` + date + `" rows="2"/>
            </div>
+           <div class="form-group">
+            <label for="problem-description2">Description</label>
+            <textarea disabled class="form-control" id="problem-description2" placeholder="` + description + `" rows="2"/>
+          </div>
+          <div class="form-group">
+           <label for="problem-location">Location</label>
+           <input disabled class="form-control" id="problem-location" placeholder="` + location + `" rows="2"/>
+         </div>
+         <div class="form-group">
+          <label for="problem-priority">Priority</label>
+          <input disabled class="form-control" id="problem-priority" placeholder="` + priority + `" rows="2"/>
+        </div>
+        <div class="form-group">
+         <label for="problem-priority">Upvotes</label>
+         <input disabled class="form-control" id="problem-priority" placeholder="` + upvotes + `" rows="2"/>
+       </div>
            <div class="form-group">
             <label for="problem-description">Photo</label>
             <img src="`+ photo +`"
