@@ -1,13 +1,9 @@
-a {
-  background-color: rgb(0,125,255);
-}
-
 td {
- font-size: 13px;
+ font-size: 14px;
 }
 
 th {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .btn-group-xs > .btn, .btn-xs {
@@ -15,8 +11,4 @@ th {
   font-size: .875rem;
   line-height: .5;
   border-radius: .2rem;
-}
-
-.more-button {
-  font-size: 13px;
 }
