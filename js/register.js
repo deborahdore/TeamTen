@@ -73,7 +73,7 @@ if(user !== null){
     }
 
 
-
+    return false;
  });
 
 })

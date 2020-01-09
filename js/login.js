@@ -47,6 +47,8 @@ if(user !== null){
       $("#login-alert").show();
     }
   }
+
+    return false;
  });
 
 })
