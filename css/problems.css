@@ -1,5 +1,5 @@
 a {
-  background-color: rgb(0,125,255);
+  background-color: rgb(023,162,183);
 }
 
 td {
@@ -19,4 +19,8 @@ th {
 
 .more-button {
   font-size: 13px;
+}
+
+table.dataTable{
+  margin: 0;
 }

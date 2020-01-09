@@ -31,7 +31,7 @@ const initialize = () => {
 }
 
 const createVolunteerBtn = (card, index) => {
-    let btn = $(`<button type="button" class="btn btn-primary" id=${index}>volunteer</button>`)
+    let btn = $(`<button type="button" class="btn btn-info" id=${index}>volunteer</button>`)
     btn.click((event) => {
         let label = $(btn).text();
         if (label === "volunteer") {
