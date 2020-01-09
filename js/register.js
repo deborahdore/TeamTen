@@ -60,7 +60,7 @@ if(user !== null){
    }
 
    for(var i=0; i < errors.length ; i++){
-        displayErrors+= "<li>"+errors[i]+"</li>";
+        displayErrors+= "<div>"+errors[i]+"</div>";
     }
 
     if(errors.length > 0){
