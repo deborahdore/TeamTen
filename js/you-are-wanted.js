@@ -17,21 +17,58 @@ let mock = [
 ]
 
 const initialize = () => {
-    $("#problems-back-button").click(function()
-    {
-        window.location.href="register_volunteer.html";
+    $("#problems-back-button").click(function () {
+        window.location.href = "register_volunteer.html";
+    });
+
+    $("#input-src").keyup((event) => {
+        let toggleMonitor = $("#togglecollapse0");
+        let toggleCleaning = $("#togglecollapse1");
+
+        if (toggleMonitor.text().toLowerCase().includes(event.target.value)) {
+            toggleCleaning.hide();
+        }
+
+        if (toggleCleaning.text().toLowerCase().includes(event.target.value)) {
+            toggleMonitor.hide();
+        }
+
+        if (event.target.value === "") {
+            toggleCleaning.show();
+            toggleMonitor.show();
+        }
     });
 
     mock.forEach((element) => {
         let card = createEventCard(element.title, element.content, element.task, element.volunteers, element.available);
-        let btn = createVolunteerBtn(card, eventsIndex++);
+        let btn = createVolunteerBtn(card, eventsIndex);
         card.append(btn);
+
+        let toggle = createCollapsableToggle(element.title, `collapse${eventsIndex}`);
+
+        $("#event-list").append(toggle);
         $("#event-list").append(card);
+
+        eventsIndex++;
     })
 }
 
+const createCollapsableToggle = (title, collapsableId) => {
+    let toggle = `<button id=toggle${collapsableId} class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#${collapsableId}" aria-expanded="false">
+    ${title}
+  </button>`
+
+    return toggle;
+}
+
+const createCollapsableElem = () => {
+    let coll = `<div class="collapse" id="collapse${eventsIndex}"></div>`
+
+    return coll;
+}
+
 const createVolunteerBtn = (card, index) => {
-    let btn = $(`<button type="button" class="btn btn-info" id=${index}>volunteer</button>`)
+    let btn = $(`<button type="button" class="btn btn-primary" id=${index}>volunteer</button>`)
     btn.click((event) => {
         let label = $(btn).text();
         if (label === "volunteer") {
@@ -49,8 +86,8 @@ const createVolunteerBtn = (card, index) => {
 }
 
 const createEventCard = (title, content, task, volunteers, available) => {
-    let card = $(`<div class="card" id=${eventsIndex}>\
-        <div class="card-header">${title}</div>\
+    let card = $(`<div class="collapse" id="collapse${eventsIndex}">\
+    <div class="card" id=${eventsIndex}>\
             <div class="card-body">
                 <p>${content}</p>
                 <p>What you have to do?</p>
@@ -60,6 +97,7 @@ const createEventCard = (title, content, task, volunteers, available) => {
             status:
             <label>${volunteers}</label> / ${available} volunteers
         </div>\
+    </div>\
     </div>`)
     return card;
 }
