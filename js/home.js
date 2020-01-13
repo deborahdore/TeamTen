@@ -27,4 +27,11 @@ $(document).ready(function(){
    $("#register-requests-button").click(() => {
      window.location.href="register_volunteer.html";
    })
+
+   $("#chatButton").click(() => {
+      window.location.href="chat_mobile.html";
+   })
+    $("#you-matter-button").click(() => {
+      window.location.href="you_matter.html";
+   })
 })
