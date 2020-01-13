@@ -48,6 +48,7 @@ $(document).ready(function(){
     var priority = "";
     var upvotes = "";
     var completed = "40";
+    var own = "";
 
     if(selected === "1"){
       photo = "https://www.freeiconspng.com/uploads/lion-icon-6.png";
@@ -70,18 +71,28 @@ $(document).ready(function(){
       priority = "HIGH";
       upvotes = "0";
       completed = "60";
+
+      own = `
+      <div class="form-group">
+       <input id="change-priority-input" type="number" name="quantity" min="0" max="100" class="form-control form-control-sm" id="problem-location" rows="1"/>
+       <button id="change-priority-btn" type="button" class="btn btn-info">Change priority</button>
+      </div>
+      `;
     }
+
+
 
     if(photo.length > 0){
         $("#more-body").html(`
           <div class="progress">
          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-           `+ completed +`% Completed
+           <span id="completed-priority">`+ completed +`</span>% Completed
          </div>
          <div id="user-comments-pop"></div>
           <div id="hall-comments-pop"></div>
        </div>
           <form style="margin-top:20px">
+           ` + own + `
           <div class="form-group text-center">
              <button id="user-comments" type="button" class="btn btn-info">User Comments</button>
              <button id="hall-comments"  style="margin-top:20px" type="button" class="btn btn-info">City Hall Comments</button>
@@ -149,6 +160,18 @@ $(document).ready(function(){
         `);
      }
 
+
+
+
+    $("#change-priority-btn").click(function(){
+
+      var prior = Number($("#change-priority-input").val());
+      if(prior < 0) prior = 0;
+      if(prior > 100) prior = 100;
+
+      $("#completed-priority").text(prior);
+
+    });
 
      $("#user-comments").click(function(){
 
