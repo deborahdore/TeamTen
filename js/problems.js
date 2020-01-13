@@ -1,4 +1,7 @@
 var incrId = 12;
+var upvoted = false;
+var downvoted = false;
+var passCount = 3;
 
 function getModal(modalName, title, bodyId){
   return `
@@ -85,19 +88,23 @@ $(document).ready(function(){
            </div>
            <div class="form-group">
             <label for="problem-description2">Description</label>
-            <textarea disabled class="form-control" id="problem-description2" placeholder="` + description + `" rows="2"/>
+            <textarea disabled class="form-control form-control-sm" id="problem-description2" placeholder="` + description + `" rows="2"/>
           </div>
           <div class="form-group">
            <label for="problem-location">Location</label>
-           <input disabled class="form-control" id="problem-location" placeholder="` + location + `" rows="2"/>
+           <input disabled class="form-control form-control-sm" id="problem-location" placeholder="` + location + `" rows="2"/>
          </div>
          <div class="form-group">
           <label for="problem-priority">Priority</label>
-          <input disabled class="form-control" id="problem-priority" placeholder="` + priority + `" rows="2"/>
+          <input disabled class="form-control form-control-sm" id="problem-priority" placeholder="` + priority + `" rows="2"/>
         </div>
         <div class="form-group">
          <label for="problem-priority">Upvotes</label>
-         <input disabled class="form-control" id="problem-priority" placeholder="` + upvotes + `" rows="2"/>
+         <input disabled class="form-control form-control-sm" id="problem-priority-upvote" placeholder="` + upvotes + `" rows="2"/>
+       </div>
+       <div class="form-group">
+       <label for="problem-priority">Your vote</label>
+         <i id="upvote-1"  class="upvote fas fa-2x fa-arrow-up mr-2"></i>
        </div>
            <div class="form-group">
             <label for="problem-description">Photo</label>
@@ -127,32 +134,30 @@ $(document).ready(function(){
         <input disabled class="form-control" id="problem-priority" placeholder="` + priority + `" rows="2"/>
       </div>
       <div class="form-group">
+      <label for="problem-priority">Your vote</label>
+        <i id="upvote-1"  class="upvote fas fa-2x fa-arrow-up mr-2"></i>
+      </div>
+      <div class="form-group">
        <label for="problem-priority">Upvotes</label>
-       <input disabled class="form-control" id="problem-priority" placeholder="` + upvotes + `" rows="2"/>
+       <input disabled class="form-control" id="problem-priority-upvote" placeholder="` + upvotes + `" rows="2"/>
      </div>
          </form>
         `);
      }
 
-     $("#user-comments").click(function(){
-       
-       $("#user-comments-pop").html(getModal("user-comments-pop-modal","User Comments", "user-comments-pop-modal-body"));
-       $("#user-comments-pop-modal").modal();
-
-       $("#user-comments-pop-modal-body").html(`
-         <div  style="overflow-y: scroll;">
-         <table id="example" class="table table-striped table-bordered">
-                 <tbody>
-                   <button id="place-1" type="button" class="btn btn-info btn-block place">
-                       Pizzeria Seba
-                   </button>
-                   <button id="place-2" type="button" class="btn btn-info btn-block place">
-                       Stradale
-                   </button>
-                 </tbody
-             </table>
-             </div>
-         `);
+     $(".upvote").click(function(){
+       var id = this.id.replace('upvote-','');
+         if(!upvoted){
+           var ups = Number($("#problem-priority-upvote").attr('placeholder')) + 1;
+           $("#problem-priority-upvote").attr('placeholder', ups);
+           upvoted = true;
+           $("#upvote-"+id).css('color', '#007c7a');
+         }else{
+           var ups = Number($("#problem-priority-upvote").attr('placeholder')) - 1;
+           $("#problem-priority-upvote").attr('placeholder', ups);
+           upvoted = false;
+           $("#upvote-"+id).css('color', 'black');
+         }
      });
 
   });
