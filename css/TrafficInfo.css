@@ -25,6 +25,9 @@
 #btn-map{
     border-radius: 1%;
     float: right;
+    width: 20%;
+    height: 30px;
+    font-size: small;
 }
 #apply, #reset{
     border-radius: 1%;
@@ -43,6 +46,7 @@
     clear: both;
 }
 .dropdown-content {
+    border: 0.2px  grey;
     display: none;
     position: absolute;
     background-color: #f1f1f1;
@@ -62,3 +66,6 @@
 }
 .dropdown-content a:hover {background-color: #ddd}
 .show {display:block;}
+#filters{
+    float:left;
+}
