@@ -84,7 +84,7 @@ $(document).ready(function(){
           <form style="margin-top:20px">
           <div class="form-group text-center">
              <button id="user-comments" type="button" class="btn btn-info">User Comments</button>
-             <button id="hall-comments" type="button" class="btn btn-info">City Hall Comments</button>
+             <button id="hall-comments"  style="margin-top:20px" type="button" class="btn btn-info">City Hall Comments</button>
            </div>
            <div class="form-group">
             <label for="problem-description2">Description</label>
@@ -121,6 +121,10 @@ $(document).ready(function(){
           </div>
         </div>
          <form style="margin-top:20px">
+         <div class="form-group text-center">
+            <button id="user-comments" type="button" class="btn btn-info">User Comments</button>
+            <button id="hall-comments"  style="margin-top:20px" type="button" class="btn btn-info">City Hall Comments</button>
+          </div>
          <div class="form-group">
           <label for="problem-description2">Description</label>
           <textarea disabled class="form-control" id="problem-description2" placeholder="` + description + `" rows="2"/>
@@ -145,6 +149,28 @@ $(document).ready(function(){
         `);
      }
 
+
+     $("#user-comments").click(function(){
+
+       $("#user-comments-pop").html(getModal("user-comments-pop-modal","User Comments", "user-comments-pop-modal-body"));
+       $("#user-comments-pop-modal").modal();
+
+       $("#user-comments-pop-modal-body").html(`
+         <div  style="overflow-y: scroll;">
+         <table id="example" class="table table-striped table-bordered">
+                 <tbody>
+                   <button id="place-1" type="button" class="btn btn-info btn-block place">
+                       Pizzeria Seba
+                   </button>
+                   <button id="place-2" type="button" class="btn btn-info btn-block place">
+                       Stradale
+                   </button>
+                 </tbody
+             </table>
+             </div>
+         `);
+   });
+
      $(".upvote").click(function(){
        var id = this.id.replace('upvote-','');
          if(!upvoted){
@@ -158,6 +184,7 @@ $(document).ready(function(){
            upvoted = false;
            $("#upvote-"+id).css('color', 'black');
          }
+
      });
 
   });

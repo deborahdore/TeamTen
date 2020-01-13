@@ -25,7 +25,10 @@ table.dataTable{
   margin: 0;
 }
 
+input[type=search]{
+  width: 90px !important;
+}
 
- .progress-bar-success{
+.progress-bar-success{
 background-color:green;
- }
+}
