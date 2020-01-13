@@ -23,29 +23,31 @@
                                                                 <div class="col-lg-12">
                                                                         <div class="text-center">
                                                                                 <div class="top-icons">
-                                                                                        <i class="fas fa-2x fa-arrow-circle-left" id="back"></i>
+                                                                                        <i class="fas fa-2x fa-arrow-circle-left" id="back"></i><br><br>
+                                                                                        <i class="fas fa-ellipsis-v" id="filters"></i>
+                                                                                        <div class="dropdown">
+                                                                                                <div id="myDropdown" class="dropdown-content">
+                                                                                                        <p>Select just one box:</p>
+                                                                                                        <input type="checkbox" id="traffic"><p>Traffic</p><br>
+                                                                                                        <input type="checkbox" id="bicycle-track"><p>Bicycle Tracks</p><br>
+                                                                                                        <input type="checkbox" id="limited-traffic-area"><p>Limited Traffic Areas</p><br>
+                                                                                                        <input type="checkbox" id="parking"><p>Parkings</p><br>
+                                                                                                        <div style="display: inline;">
+                                                                                                                <button type="button" id="apply">Apply</button>
+                                                                                                                <button type="button" id="reset">Reset</button>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                        </div>
                                                                                         <input type=”text” id="position" placeholder="Insert your position!" style="width:70%;" >
                                                                                         <button type="button" id="btn-map">Search</button>
+                                                                                        
                                                                                 </div>
                                                                                 <iframe style="height:60vh;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21860.082662613037!2d23.582950784813185!3d46.77454757107513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47490c1f916c0b8b%3A0xbbc601c331f148b!2sCluj-Napoca!5e0!3m2!1sen!2sro!4v1575993535448!5m2!1sen!2sro" id="map" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                                                                                 <p id="new_map"></p>
                                                                                 <div class="bottom-icons">
-                                                                                        <i class="fas fa-ellipsis-v" id="filters" style="float:right;"></i>
                                                                                         <i class="fas fa-location-arrow" id="location" style="float: left;"></i>
                                                                                 </div>
-                                                                                <div class="dropdown">
-                                                                                        <div id="myDropdown" class="dropdown-content">
-                                                                                                <p>Select just one box:</p>
-                                                                                                <input type="checkbox" id="traffic"><p>Traffic</p><br>
-                                                                                                <input type="checkbox" id="bicycle-track"><p>Bicycle Tracks</p><br>
-                                                                                                <input type="checkbox" id="limited-traffic-area"><p>Limited Traffic Areas</p><br>
-                                                                                                <input type="checkbox" id="parking"><p>Parkings</p><br>
-                                                                                                <div style="display: inline;">
-                                                                                                        <button type="button" id="apply">Apply</button>
-                                                                                                        <button type="button" id="reset">Reset</button>
-                                                                                                </div>
-                                                                                        </div>
-                                                                                </div>
+                                                                               
                                                                                 <p id="msg-error">You have selected more than one box. Check Again!</p>
 
                                                                         </div>
