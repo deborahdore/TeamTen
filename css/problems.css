@@ -24,3 +24,8 @@ th {
 table.dataTable{
   margin: 0;
 }
+
+
+ .progress-bar-success{
+background-color:green;
+ }
