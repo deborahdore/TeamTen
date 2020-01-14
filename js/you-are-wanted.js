@@ -17,6 +17,11 @@ let mock = [
 ]
 
 const initialize = () => {
+    $("#problems-back-button").click(function()
+    {
+        window.location.href="register_volunteer.html";
+    });
+
     mock.forEach((element) => {
         let card = createEventCard(element.title, element.content, element.task, element.volunteers, element.available);
         let btn = createVolunteerBtn(card, eventsIndex++);
@@ -26,7 +31,7 @@ const initialize = () => {
 }
 
 const createVolunteerBtn = (card, index) => {
-    let btn = $(`<button type="button" class="btn btn-primary" id=${index}>volunteer</button>`)
+    let btn = $(`<button type="button" class="btn btn-info" id=${index}>volunteer</button>`)
     btn.click((event) => {
         let label = $(btn).text();
         if (label === "volunteer") {
@@ -49,7 +54,7 @@ const createEventCard = (title, content, task, volunteers, available) => {
             <div class="card-body">
                 <p>${content}</p>
                 <p>What you have to do?</p>
-                <p>${task}</p>    
+                <p>${task}</p>
             </div>\
         <div class="card-footer">
             status:
