@@ -51,71 +51,72 @@
 
                         <form>
                                 <div class="row my-2">
-                                    <div class="col">
+                                    
                                         <label for="name-form-input">Full Name</label>
                                         <input type=text class="form-control" id="name-form-input"
                                         placeholder="Popescu Ion"
                                         onfocus="this.placeholder=''"
                                         onblur="this.placeholder='Popescu Ion'">
-                                    </div>
+                                </div>
 
-                                    <div class="col">
+                                <div class="row my-2">
                                         <label for="birth-date-form-input">Date of birth</label>
-                                        <input type="text" class="form-control" id="date-picker-form-input" placeholder="Date of birth">
-                                        <!--<div class='input-group datepicker' data-provide="datepicker" id='date-picker-form-input'>
+                                        <!--<input type="text" class="form-control" id="date-picker-form-input" placeholder="Date of birth">-->
+                                        <div class='input-group datepicker' data-provide="datepicker" id='date-picker-form-input'>
                                             <input type='text' class="form-control" />
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                             </span>
-                                        </div>-->
-                                    </div>
+                                        </div>
                                 </div>
 
                                 <div class="row my-2">
-                                        <div class="col">
+                                        
                                                 <label for="telephone-form-input">Telephone</label>
                                                 <input type=text class="form-control" id="telephone-form-input"
                                                 placeholder="07XXXXXXXX"
                                                 onfocus="this.placeholder=''"
                                                 onblur="this.placeholder='07XXXXXXXX'">
-                                        </div>
 
-                                        <div class="col">
+
+                                </div>
+        
+                                <div class="row my-2">
                                             <label for="ci-form-input">C.I.</label>
                                             <input type="file" class="form-control-file" id="ci-form-input">
-                                        </div>
+                                       
                                 </div>
 
                                 <div class="row my-2">
-                                    <div class="col">
+                                    
                                         <label for="address-form-input">Address</label>
                                         <input type=text class="form-control" id="address-form-input"
                                         placeholder="Str. Observatorului, nr. 75 ..."
                                         onfocus="this.placeholder=''"
                                         onblur="this.placeholder='Str. Observatorului, nr. 75 ...'">
-                                    </div>
+                                    
                                 </div>
 
                                 <div class="row my-2">
-                                        <div class="col">
+                                        
                                             <label for="email-form-input">Email</label>
                                             <input type=email class="form-control" id="email-form-input"
                                             placeholder="ion.popescu@gmail.com"
                                             onfocus="this.placeholder=''"
                                             onblur="this.placeholder='ion.popescu@gmail.com'">
-                                        </div>
+                                </div>
 
-                                        <div class="col">
+                              <div class="row my-2">
                                                 <label for="password-form-input">Password</label>
                                                 <input type=password class="form-control" id="password-form-input"
                                                 placeholder="Password"
                                                 onfocus="this.placeholder=''"
                                                 onblur="this.placeholder='Password'">
-                                        </div>
-                                </div>
+                              </div>
+                                
 
                                 <div class="row my-2">
-                                        <div class="col">
+                                        
                                             <label for="category-form-input">Category</label>
                                             <select  class="form-control" id="category-form-input">
                                                 <option selected>Select a category</option>
@@ -124,14 +125,12 @@
                                                 <option>Construction</option>
                                                 <option>Other</option>
                                             </select>
-                                        </div>
                                 </div>
 
                                 <div class="row my-2">
-                                        <div class="col">
-                                            <label for="cv-form-input">CV and/or certificates</label>
-                                            <input type="file" class="form-control-file" id="cv-form-input" multiple>
-                                        </div>
+                                  <label for="cv-form-input">CV and/or certificates</label>
+                                  <input type="file" class="form-control-file" id="cv-form-input" multiple>
+                                        
                                 </div>
 
                                 <div class="row form-check my-2">
@@ -141,10 +140,14 @@
                                     </div>
                                 </div>
 
-                                <row>
-                                    <button type="submit" class="btn btn-info float-left" id="submit-form-btn">Submit</button>
+                                <div class="row form-check my-2">
+                                  <row>
+                                    <button type="submit" class="btn btn-primary float-left" id="submit-form-btn">Submit</button>
                                     <button type="reset" class="btn btn-danger float-right" id="clear-form-btn">Clear</button>
                                 </row>
+                              </div>
+
+                                
                         </form>
 
                     </div>
