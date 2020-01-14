@@ -57,9 +57,9 @@ $(document).ready(function(){
                   <table id="example" class="table table-striped table-bordered">
                           <thead>
                               <tr>
-                                  <th>Passwords submitted</th>
-                                  <th>Upvote</th>
-                                  <th>Downvote</th>
+                                  <th>Pass</th>
+                                  <th>Up vote</th>
+                                  <th>Down vote</th>
                                   <th>Your vote</th>
                                   <th>Date</th>
                               </tr>
@@ -99,9 +99,9 @@ $(document).ready(function(){
                     <table id="example" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
-                                    <th>Passwords submitted</th>
-                                    <th>Upvote</th>
-                                    <th>Downvote</th>
+                                    <th>Pass</th>
+                                    <th>Up vote</th>
+                                    <th>Down vote</th>
                                     <th>Your vote</th>
                                     <th>Date</th>
                                 </tr>
