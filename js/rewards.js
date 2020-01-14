@@ -8,5 +8,5 @@ $(document).ready(function()
 
     $("#vouchers-button").click(() => window.location.href="vouchers.html");
 
-    $("#bus-tickets-button").click(() => window.location.href="you_are_wanted.html");
+    $("#bus-tickets-button").click(() => window.location.href="bus_tickets.html");
 })

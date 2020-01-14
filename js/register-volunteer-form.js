@@ -16,5 +16,13 @@ $(document).ready(function()
         $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
       });
 
+      $("#multiple_input_group").change(function(){
+
+        //get just filename from full path
+    
+        $("#file-name").html($("#multiple_input_group").val().replace(/^.*[\\\/]/, ''));
+    
+      });
+
 
 })

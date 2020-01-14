@@ -9,7 +9,8 @@
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <link rel="stylesheet" type="text/css" href="css/problems.css">
-  <link rel="stylesheet" type="text/css" href="css/vouchers.css">
+    <link rel="stylesheet" type="text/css" href="css/upload-file.css">
+    <link rel="stylesheet" type="text/css" href="css/bus-tickets.css">
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script src = "http://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
   <script src = "http://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
@@ -21,7 +22,7 @@
 	<script type="text/javascript" src='js/main.js'></script>
   <script type="text/javascript" src='js/redirect.js'></script>
   <script type="text/javascript" src='js/home.js'></script>
-  <script type="text/javascript" src="js/vouchers.js"></script>
+  <script type="text/javascript" src="js/bus-tickets.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
 
@@ -39,16 +40,16 @@
                   <div class="col-lg-12">
       
                     <!-- BACK button -->
-                      <div class="text-left">
+                    <div class="text-left">
 
-                        <i id="vouchers-back-button" class="fas fa-2x fa-arrow-circle-left" id="back"></i>
-  
-                    </div>
+                      <i id="bus-tickets-back-button" class="fas fa-2x fa-arrow-circle-left" id="back"></i>
+
+                  </div>
       
                     <div class="p-5">
 
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Your vouchers</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Your free bus tickets</h1>
                             </div>
                     </div>
 
@@ -63,7 +64,7 @@
                             </button>
                           </div>
                           <div  class="modal-body">
-                                Voucher sent! Check your email inbox :)
+                                Bus ticket sent! Check your email inbox :)
                           </div>
                         </div>
                       </div>
@@ -80,7 +81,7 @@
                             </button>
                           </div>
                           <div  class="modal-body">
-                                You declined the voucher
+                                You declined the bus ticket
                           </div>
                         </div>
                       </div>
@@ -88,11 +89,11 @@
                   </div>
       
                   </div>
-                    <div id="no-voucher"  class="row my-3 mx-5">
+                    <div id="no-bus-ticket"  class="row my-3 mx-5">
                         <div class="col-sm my-3">
                             <div >
                                 <br/>
-                                You have no vouchers to redeem
+                                You have no bus tickets to redeem
                                 <br/>
                                 <br/>
                             </div>
@@ -100,11 +101,12 @@
                     </div>
 
                   <div  class="btn  btn-block mx-3">
-                    <div id="opera-tickets-div" class="row my-3 mx-5">
+                    <div id="bus-tickets1-div" class="row my-3 mx-5">
                         <div class="col-sm my-3">
-                            <div class="voucher">
+                            <div class="bus-ticket">
+                                1 Bus ticket
                                 <br/>
-                                2xOpera tickets
+                                Available 45 min.
                                 <br/>
                                 <br/>
                             </div>
@@ -120,14 +122,15 @@
                         </div>
                     </div>
 
-                    <div id="cinema-tickets-div" class="row my-3 mx-5">
+                    <div id="bus-tickets2-div" class="row my-3 mx-5">
                         <div class="col-sm my-3">
-                            <div class="voucher">
+                            <div class="bus-ticket">
                                 
-                                2xCinema tickets 
+                                1 Bus ticket
                                 <br/>
-                                (Wednesday only)
+                                Available all day 
                                 <br/>
+                                on route 24B
                                 <br/>
                                 
                             </div>
