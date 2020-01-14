@@ -1,0 +1,37 @@
+.body {
+  height: 500px;
+}
+
+.row1:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.optionClass {
+  border:3px; 
+  border-style:solid; 
+  border-color:#3f099c; 
+  border-radius: 5px;
+  padding: 1em;
+}
+
+.selectedClass {
+  border:3px; 
+  border-style:solid; 
+  border-color:#9edbff; 
+  border-radius: 5px;
+  padding: 1em;
+}
+
+#decisionList {
+  overflow-y: scroll;
+  max-height: 450px;
+}
+
+.questions {
+	padding: 20px;
+	overflow-y: scroll;
+  max-height: 500px;
+  width: 90%
+}
