@@ -85,7 +85,7 @@ $(document).ready(function(){
     if(photo.length > 0){
         $("#more-body").html(`
           <div class="progress">
-         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="` + completed + `" aria-valuemin="0" aria-valuemax="100" style="width:` + completed + `%">
            <span id="completed-priority">`+ completed +`</span>% Completed
          </div>
          <div id="user-comments-pop"></div>
@@ -168,15 +168,25 @@ $(document).ready(function(){
       if(prior > 100) prior = 100;
 
       $("#completed-priority").text(prior);
+      $('.progress-bar-success').css('width', prior+'%').attr('aria-valuenow', prior);
 
     });
 
      $("#user-comments").click(function(){
 
-       $("#user-comments-pop").html(getModal("user-comments-pop-modal","User Comments", "user-comments-pop-modal-body"));
+       $("#user-comments-pop").html(getModal("user-comments-pop-modal","Comments", "user-comments-pop-modal-body"));
        $("#user-comments-pop-modal").modal();
 
        $("#user-comments-pop-modal-body").html(`
+         <div class="form-group">
+           <label for="comment-category">Switch Comments Type</label>
+           <select id="comment-category" class="form-control form-control-sm">
+             <option>Both</option>
+             <option>User</option>
+             <option>City Hall</option>
+           </select>
+         </div>
+         <div class="row bootstrap snippets">
          <div class="row bootstrap snippets">
      <div class="col-md-6 col-md-offset-2 col-sm-12">
          <div class="comment-wrapper">
@@ -189,6 +199,20 @@ $(document).ready(function(){
                      <div class="clearfix"></div>
                      <hr>
                      <ul class="media-list">
+                     <li class="media">
+                         <a href="#" class="pull-left">
+                             <img src="./images/profile_img.png" alt="" class="img-circle">
+                         </a>
+                         <div class="media-body">
+                             <span class="text-muted pull-right">
+                                 <small class="text-muted">2 minutes ago</small>
+                             </span>
+                             <strong class="text-success">@Mrs.Big/CityHall</strong>
+                             <p>
+                                Please anybody who sees this animal, report it immediately!
+                             </p>
+                         </div>
+                     </li>
                          <li class="media">
                              <a href="#" class="pull-left">
                                  <img src="https://bootdey.com/img/Content/user_2.jpg" alt="" class="img-circle">
@@ -227,8 +251,115 @@ $(document).ready(function(){
          `);
 
 
+         $("#comment-category").change(function(e) {
+
+         var cat =  $("#comment-category").val();
+         console.log(cat);
+         if(cat == "Both"){
+             $(".media-list").html(
+           `
+           <li class="media">
+               <a href="#" class="pull-left">
+                   <img src="./images/profile_img.png" alt="" class="img-circle">
+               </a>
+               <div class="media-body">
+                   <span class="text-muted pull-right">
+                       <small class="text-muted">2 minutes ago</small>
+                   </span>
+                   <strong class="text-success">@Mrs.Big/CityHall</strong>
+                   <p>
+                      Please anybody who sees this animal, report it immediately!
+                   </p>
+               </div>
+           </li>
+           <li class="media">
+               <a href="#" class="pull-left">
+                   <img src="https://bootdey.com/img/Content/user_2.jpg" alt="" class="img-circle">
+               </a>
+               <div class="media-body">
+                   <span class="text-muted pull-right">
+                       <small class="text-muted">30 min ago</small>
+                   </span>
+                   <strong class="text-success">@LaurenceCorreil</strong>
+                   <p>
+                      No, it isn't. Please do not go out!
+                   </p>
+               </div>
+           </li>
+           <li class="media">
+               <a href="#" class="pull-left">
+                   <img src="https://bootdey.com/img/Content/user_3.jpg" alt="" class="img-circle">
+               </a>
+               <div class="media-body">
+                   <span class="text-muted pull-right">
+                       <small class="text-muted">32 min ago</small>
+                   </span>
+                   <strong class="text-success">@JohnNida</strong>
+                   <p>
+                       Isn't this a false alarm?
+                   </p>
+               </div>
+           </li>
+           `);
+         }else if(cat == "User"){
+           $(".media-list").html(
+         `
+         <li class="media">
+             <a href="#" class="pull-left">
+                 <img src="https://bootdey.com/img/Content/user_2.jpg" alt="" class="img-circle">
+             </a>
+             <div class="media-body">
+                 <span class="text-muted pull-right">
+                     <small class="text-muted">30 min ago</small>
+                 </span>
+                 <strong class="text-success">@LaurenceCorreil</strong>
+                 <p>
+                    No, it isn't. Please do not go out!
+                 </p>
+             </div>
+         </li>
+         <li class="media">
+             <a href="#" class="pull-left">
+                 <img src="https://bootdey.com/img/Content/user_3.jpg" alt="" class="img-circle">
+             </a>
+             <div class="media-body">
+                 <span class="text-muted pull-right">
+                     <small class="text-muted">32 min ago</small>
+                 </span>
+                 <strong class="text-success">@JohnNida</strong>
+                 <p>
+                     Isn't this a false alarm?
+                 </p>
+             </div>
+         </li>
+         `);
+         }else{
+           $(".media-list").html(
+         `
+         <li class="media">
+             <a href="#" class="pull-left">
+                 <img src="./images/profile_img.png" alt="" class="img-circle">
+             </a>
+             <div class="media-body">
+                 <span class="text-muted pull-right">
+                     <small class="text-muted">2 minutes ago</small>
+                 </span>
+                 <strong class="text-success">@Mrs.Big/CityHall</strong>
+                 <p>
+                    Please anybody who sees this animal, report it immediately!
+                 </p>
+             </div>
+         </li>
+         `);
+         }
+       });
+
    $("#post-comment").click(function(){
      var message = $("#comment-area").val();
+
+     var cat =  $("#comment-category").val();
+     console.log(cat);
+     if(cat != "City Hall"){
      $("#comment-area").val("");
       $(".media-list").prepend(`
         <li class="media">
@@ -241,52 +372,14 @@ $(document).ready(function(){
                 </span>
                 <strong class="text-success">@User</strong>
                 <p>
-                  `+message+` </a>.
+                  `+message+` </a>
                 </p>
             </div>
         </li>
         `)
+      }
        });
    });
-
-
-   $("#hall-comments").click(function(){
-
-     $("#hall-comments-pop").html(getModal("hall-comments-pop-modal","City Hall Comments", "hall-comments-pop-modal-body"));
-     $("#hall-comments-pop-modal").modal();
-
-     $("#hall-comments-pop-modal-body").html(`
-       <div class="row bootstrap snippets">
-   <div class="col-md-6 col-md-offset-2 col-sm-12">
-       <div class="comment-wrapper">
-           <div class="panel panel-info">
-
-               <div class="panel-body">
-                   <ul class="media-list">
-                       <li class="media">
-                           <a href="#" class="pull-left">
-                               <img src="https://bootdey.com/img/Content/user_2.jpg" alt="" class="img-circle">
-                           </a>
-                           <div class="media-body">
-                               <span class="text-muted pull-right">
-                                   <small class="text-muted">2 days ago</small>
-                               </span>
-                               <strong class="text-success">@Mrs.Big</strong>
-                               <p>
-                                  Please anybody who sees this animal, report it immediately!
-                               </p>
-                           </div>
-                       </li>
-                   </ul>
-               </div>
-           </div>
-       </div>
-
-   </div>
-</div>
-       `);
- });
-
 
 
      $(".upvote").click(function(){
