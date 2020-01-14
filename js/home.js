@@ -38,6 +38,10 @@ $(document).ready(function () {
   $("#discounts-button").click(() => {
     window.location.href = "discounts.html";
   })
+
+  $("#rewards-button").click(() => {
+    window.location.href = "rewards_home.html";
+  })
   $("#swt-simplified").change(function () {
     if ($(this).prop("checked") === true) {
       changeFontSize(5);
@@ -45,6 +49,8 @@ $(document).ready(function () {
       changeFontSize(-5);
     }
   })
+
+
   
    $("#chat-button").click(() => {
     if(isCityHall === "true"){

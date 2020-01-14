@@ -1,5 +1,7 @@
 $(document).ready(function()
 {
+    $("#no-voucher").hide();
+    
     var voucher1;
     var voucher2;
     $("#vouchers-back-button").click(function()
@@ -13,13 +15,18 @@ $(document).ready(function()
         voucher1 = true;
         if(voucher1 == true && voucher2 == true)
         {
-            console.log("hei");
+            $("#no-voucher").show();
         }
     });
 
-    $("decline1-button").click(function()
+    $("#decline1-button").click(function()
     {
         $("#opera-tickets-div").hide();
+        voucher1 = true;
+        if(voucher1 == true && voucher2 == true)
+        {
+            $("#no-voucher").show();
+        }
     });
 
     $("#redeem2-button").click(function()
@@ -28,14 +35,21 @@ $(document).ready(function()
         voucher2 = true;
         if(voucher1 == true && voucher2 == true)
         {
-            console.log("hei");
+            $("#no-voucher").show();
         }
     });
 
-    $("decline2-button").click(function()
+    $("#decline2-button").click(function()
     {
         $("#cinema-tickets-div").hide();
+        voucher2 = true;
+        if(voucher1 == true && voucher2 == true)
+        {
+            $("#no-voucher").show();
+        }
     });
+
+    
 
     
 
