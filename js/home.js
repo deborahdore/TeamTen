@@ -1,4 +1,10 @@
-
+const changeFontSize = (incr) => {
+  $("div").children().each(function () {
+    var fontSize = parseInt($(this).css('font-size'), 10);
+    fontSize += incr;
+    $(this).css('font-size', fontSize + 'px');
+  })
+}
 
 $(document).ready(function () {
 
@@ -31,4 +37,12 @@ $(document).ready(function () {
   $("#discounts-button").click(() => {
     window.location.href = "discounts.html";
   })
+  $("#swt-simplified").change(function () {
+    if ($(this).prop("checked") === true) {
+      changeFontSize(5);
+    } else {
+      changeFontSize(-5);
+    }
+  })
 })
+

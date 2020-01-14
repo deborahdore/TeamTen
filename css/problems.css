@@ -28,3 +28,7 @@ table.dataTable{
 input[type=search]{
   width: 90px !important;
 }
+
+.progress-bar-success{
+background-color:green;
+}

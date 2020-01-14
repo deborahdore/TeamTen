@@ -27,9 +27,10 @@ const initialize = () => {
 
         if (toggleMonitor.text().toLowerCase().includes(event.target.value)) {
             toggleCleaning.hide();
-        }
-
-        if (toggleCleaning.text().toLowerCase().includes(event.target.value)) {
+        } else if (toggleCleaning.text().toLowerCase().includes(event.target.value)) {
+            toggleMonitor.hide();
+        } else {
+            toggleCleaning.hide();
             toggleMonitor.hide();
         }
 
