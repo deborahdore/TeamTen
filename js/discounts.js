@@ -11,8 +11,8 @@ const initialize = () => {
 
     $(".discount").click(() => {
         if (remainingDiamonds > 0) {
-            confirm("Are you sure you want to use the credit?");
-            $("#remaining-diamonds").text(--remainingDiamonds + " x");
+            let resp = confirm("Are you sure you want to use the credit?");
+            if (resp) $("#remaining-diamonds").text(--remainingDiamonds + " x");
         } else {
             alert("You don't have enough credits!");
         }
