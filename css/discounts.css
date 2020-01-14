@@ -1,0 +1,73 @@
+.discount {
+    width: 100%;
+}
+
+#row {
+    overflow: scroll;
+    height: 100%;
+}
+
+#img-diamond {
+    height: 20px;
+}
+
+#diamond-container {
+    text-align: left;
+    padding: 0;
+}
+
+#remaining-container {
+    padding: 0 5px 0 0;
+}
+
+/* Container holding the image and the text */
+
+.container {
+    position: relative;
+}
+
+/* Bottom right text */
+
+.text-block-dacia {
+    position: absolute;
+    bottom: 5px;
+    right: 20px;
+    color: crimson;
+    background-color: white;
+    font-size: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.text-block-allview {
+    position: absolute;
+    bottom: 5px;
+    right: 20px;
+    color: crimson;
+    background-color: white;
+    font-size: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.text-block-ctp {
+    position: absolute;
+    bottom: 5px;
+    right: 20px;
+    color: crimson;
+    background-color: white;
+    font-size: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.text-block-cfr {
+    position: absolute;
+    bottom: 5px;
+    right: 20px;
+    color: crimson;
+    background-color: white;
+    font-size: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+}

@@ -103,6 +103,7 @@
 	</div>
 
 		<div  style="overflow-y: scroll;">
+			<div id="user-comments-pop"></div>
 		<table id="example" class="table table-striped table-bordered">
 										<thead>
 												<tr>
@@ -114,6 +115,7 @@
 														<th>Date</th>
 														<th>Status</th>
 														<th>Priority</th>
+														<th style="display: none"></th>
 														<th style="display: none"></th>
 														<th style="display: none"></th>
 												</tr>
@@ -130,6 +132,7 @@
 														<td class="td-priority">HIGH</td>
 														<td><button id="reprioritize-button-1" type="button" class="reprioritize-button btn btn-info">Reprioritize</button></td>
 														<td><button id="photos-button-1" type="button" class="photos-button btn btn-info">Photos</button></td>
+														<td><button id="comment-button-1" type="button" class="comment-button btn btn-info">Comments</button></td>
 												</tr>
 												<tr id="row-2">
 														<td>Clean City Park</td>
@@ -142,6 +145,7 @@
 														<td class="td-priority">HIGH</td>
 														<td><button id="reprioritize-button-2" type="button" class="reprioritize-button btn btn-info">Reprioritize</button></td>
 														<td><button id="photos-button-2" type="button" class="photos-button btn btn-info">Photos</button></td>
+														<td><button id="comment-button-2" type="button" class="comment-button btn btn-info">Comments</button></td>
 												</tr>
 												<tr id="row-3">
 														<td>Ashton Cox</td>
@@ -154,6 +158,7 @@
 														<td class="td-priority">HIGH</td>
 														<td><button id="reprioritize-button-3" type="button" class="reprioritize-button btn btn-info">Reprioritize</button></td>
 														<td><button id="photos-button-3" type="button" class="photos-button btn btn-info">Photos</button></td>
+														<td><button id="comment-button-3" type="button" class="comment-button btn btn-info">Comments</button></td>
 												</tr>
 												<tr id="row-4">
 														<td>Cedric Kelly</td>
@@ -166,6 +171,7 @@
 														<td class="td-priority">HIGH</td>
 														<td><button id="reprioritize-button-4" type="button" class="reprioritize-button btn btn-info">Reprioritize</button></td>
 														<td><button id="photos-button-4" type="button" class="photos-button btn btn-info">Photos</button></td>
+														<td><button id="comment-button-1" type="button" class="comment-button btn btn-info">Comments</button></td>
 												</tr>
 												<tr id="row-5">
 														<td>Airi Satou</td>
@@ -178,6 +184,7 @@
 														<td class="td-priority">HIGH</td>
 														<td><button id="reprioritize-button-5" type="button" class="reprioritize-button btn btn-info">Reprioritize</button></td>
 														<td><button id="photos-button-5" type="button" class="photos-button btn btn-info">Photos</button></td>
+														<td><button id="comment-button-1" type="button" class="comment-button btn btn-info">Comments</button></td>
 												</tr>
 												<tr id="row-6">
 														<td>Brielle Williamson</td>
@@ -190,6 +197,7 @@
 														<td class="td-priority">HIGH</td>
 														<td><button id="reprioritize-button-6" type="button" class="reprioritize-button btn btn-info">Reprioritize</button></td>
 														<td><button id="photos-button-6" type="button" class="photos-button btn btn-info">Photos</button></td>
+														<td><button id="comment-button-1" type="button" class="comment-button btn btn-info">Comments</button></td>
 												</tr>
 												<tr id="row-7">
 														<td>Herrod Chandler</td>
@@ -202,6 +210,7 @@
 														<td class="td-priority">LOW</td>
 														<td><button id="reprioritize-button-7" type="button" class="reprioritize-button btn btn-info">Reprioritize</button></td>
 														<td><button id="photos-button-7" type="button" class="photos-button btn btn-info">Photos</button></td>
+														<td><button id="comment-button-1" type="button" class="comment-button btn btn-info">Comments</button></td>
 												</tr>
 												<tr id="row-8">
 														<td>Rhona Davidson</td>
@@ -214,6 +223,7 @@
 														<td class="td-priority">LOW</td>
 														<td><button id="reprioritize-button-8" type="button" class="reprioritize-button btn btn-info">Reprioritize</button></td>
 														<td><button id="photos-button-8" type="button" class="photos-button btn btn-info">Photos</button></td>
+														<td><button id="comment-button-1" type="button" class="comment-button btn btn-info">Comments</button></td>
 												</tr>
 												<tr id="row-9">
 														<td>Colleen Hurst</td>
@@ -226,6 +236,7 @@
 														<td class="td-priority">LOW</td>
 														<td><button id="reprioritize-button-9" type="button" class="reprioritize-button btn btn-info">Reprioritize</button></td>
 														<td><button id="photos-button-9" type="button" class="photos-button btn btn-info">Photos</button></td>
+														<td><button id="comment-button-1" type="button" class="comment-button btn btn-info">Comments</button></td>
 												</tr>
 												<tr id="row-10">
 														<td>Sonya Frost</td>
@@ -238,6 +249,7 @@
 														<td class="td-priority">LOW</td>
 														<td><button id="reprioritize-button-10" type="button" class="reprioritize-button btn btn-info">Reprioritize</button></td>
 														<td><button id="photos-button-10" type="button" class="photos-button btn btn-info">Photos</button></td>
+														<td><button id="comment-button-1" type="button" class="comment-button btn btn-info">Comments</button></td>
 												</tr>
 												<tr id="row-11">
 														<td>Jena Gaines</td>
@@ -250,6 +262,7 @@
 														<td class="td-priority">LOW</td>
 														<td><button id="reprioritize-button-11" type="button" class="reprioritize-button btn btn-info">Reprioritize</button></td>
 														<td><button id="photos-button-11" type="button" class="photos-button btn btn-info">Photos</button></td>
+														<td><button id="comment-button-1" type="button" class="comment-button btn btn-info">Comments</button></td>
 												</tr>
 												<tr id="row-12">
 														<td>Quinn Flynn</td>
@@ -262,6 +275,7 @@
 														<td class="td-priority">LOW</td>
 														<td><button id="reprioritize-button-12" type="button" class="reprioritize-button btn btn-info">Reprioritize</button></td>
 														<td><button id="photos-button-12" type="button" class="photos-button btn btn-info">Photos</button></td>
+														<td><button id="comment-button-1" type="button" class="comment-button btn btn-info">Comments</button></td>
 												</tr>
 
 
