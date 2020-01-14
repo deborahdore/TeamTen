@@ -94,7 +94,6 @@ function appendMessage(qNr, aNr, question, answer1, answer2) {
     $("#answer"+(aNr + 1)).text($("#answer"+(aNr+1)).text() +  ": " + (100-x) + "%");
     $("#answer"+(aNr+1)).attr("class", "selectedClass");
     }
-    
   })
 
 

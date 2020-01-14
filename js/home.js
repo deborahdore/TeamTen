@@ -8,7 +8,7 @@ $(document).ready(function(){
    });
 
    isCityHall = localStorage.getItem("isCityHall");
-
+   
    $("#city-problems-button").click(function(){
      if(isCityHall === "true"){
       window.location.href="problems_hall.html";
@@ -28,10 +28,19 @@ $(document).ready(function(){
      window.location.href="register_volunteer.html";
    })
 
-   $("#chatButton").click(() => {
-      window.location.href="chat_mobile.html";
+   $("#chat-button").click(() => {
+    if(isCityHall === "true"){
+      window.location.href="chat_hall.html";
+     }else{
+       window.location.href="chat_mobile.html";
+     }
+      
    })
-    $("#you-matter-button").click(() => {
-      window.location.href="you_matter.html";
+    $("#make-poll-button").click(() => {
+      if(isCityHall === "true"){
+      window.location.href="you_matter_hall.html";
+     }else{
+       window.location.href="you_matter.html";
+     }
    })
 })
