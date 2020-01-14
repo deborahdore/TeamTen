@@ -94,8 +94,7 @@ $(document).ready(function(){
           <form style="margin-top:20px">
            ` + own + `
           <div class="form-group text-center">
-             <button id="user-comments" type="button" class="btn btn-info">User Comments</button>
-             <button id="hall-comments"  style="margin-top:20px" type="button" class="btn btn-info">City Hall Comments</button>
+             <button id="user-comments" type="button" class="btn btn-info">Comments</button>
            </div>
            <div class="form-group">
             <label for="problem-description2">Description</label>
@@ -133,8 +132,7 @@ $(document).ready(function(){
         </div>
          <form style="margin-top:20px">
          <div class="form-group text-center">
-            <button id="user-comments" type="button" class="btn btn-info">User Comments</button>
-            <button id="hall-comments"  style="margin-top:20px" type="button" class="btn btn-info">City Hall Comments</button>
+            <button id="user-comments" type="button" class="btn btn-info">Comments</button>
           </div>
          <div class="form-group">
           <label for="problem-description2">Description</label>
