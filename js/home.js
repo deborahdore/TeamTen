@@ -10,6 +10,7 @@ $(document).ready(function () {
 
   $("#logout-button").click(function () {
     localStorage.removeItem("user");
+
     window.location.href = "index.html";
   });
 
@@ -44,5 +45,22 @@ $(document).ready(function () {
       changeFontSize(-5);
     }
   })
+  
+   $("#chat-button").click(() => {
+    if(isCityHall === "true"){
+      window.location.href="chat_hall.html";
+     }else{
+       window.location.href="chat_mobile.html";
+     }
+      
+   })
+    $("#make-poll-button").click(() => {
+      if(isCityHall === "true"){
+      window.location.href="you_matter_hall.html";
+     }else{
+       window.location.href="you_matter.html";
+     }
+   })
+
 })
 
