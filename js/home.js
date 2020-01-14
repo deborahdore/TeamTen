@@ -34,6 +34,9 @@ $(document).ready(function () {
     window.location.href = "register_volunteer.html";
   })
 
+  $("#discounts-button").click(() => {
+    window.location.href = "discounts.html";
+  })
   $("#swt-simplified").change(function () {
     if ($(this).prop("checked") === true) {
       changeFontSize(5);
