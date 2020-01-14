@@ -54,21 +54,38 @@
                     </div>
 
                     <!-- Modal -->
-								<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-									<div class="modal-dialog" role="document">
-										<div class="modal-content">
-											<div class="modal-header">
-												<h5 class="modal-title" id="exampleModalLabel">Photos</h5>
-												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-													<span aria-hidden="true">&times;</span>
-												</button>
-											</div>
-											<div id="photos-body" class="modal-body">
+                    <div class="modal fade" id="redeem-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Redeemed!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div id="photos-body" class="modal-body">
 
-											</div>
-										</div>
-									</div>
-								</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="decline-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Declined!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div id="photos-body" class="modal-body">
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
 
                     
@@ -77,7 +94,7 @@
                   </div>
 
                   <div  class="btn  btn-block mx-3">
-                    <div class="row my-3 mx-5">
+                    <div id="opera-tickets-div" class="row my-3 mx-5">
                         <div class="col-sm my-3">
                             <div class="voucher">
                                 <br/>
@@ -88,16 +105,16 @@
                         </div>
                         <div class="col-sm">
                             <div class="row my-2">
-                                <button type="button" id="redeem-button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Redeem</button>
+                                <button type="button" id="redeem1-button" class="btn btn-success" data-toggle="modal" data-target="#redeem-modal">Redeem</button>
                             </div>
                             <div class="row my-2">
-                                <button type="button" id="decline-button" class="btn btn-danger">Decline</button>
+                                <button type="button" id="decline1-button" class="btn btn-danger" data-toggle="modal" data-target="#decline-modal">Decline</button>
                             </div>
                             
                         </div>
                     </div>
 
-                    <div class="row my-3 mx-5">
+                    <div id="cinema-tickets-div" class="row my-3 mx-5">
                         <div class="col-sm my-3">
                             <div class="voucher">
                                 
@@ -111,10 +128,10 @@
                         </div>
                         <div class="col-sm">
                             <div class="row my-2">
-                                <button type="button" id="redeem-button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Redeem</button>
+                                <button type="button" id="redeem2-button" class="btn btn-success" data-toggle="modal" data-target="#redeem-modal">Redeem</button>
                             </div>
                             <div class="row my-2">
-                                <button type="button" id="decline-button" class="btn btn-danger">Decline</button>
+                                <button type="button" id="decline2-button" class="btn btn-danger" data-toggle="modal" data-target="#decline-modal">Decline</button>
                             </div>
                             
                         </div>
