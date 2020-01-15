@@ -7,6 +7,16 @@ $(document).ready(function()
     });
 
 
+    $("#submit-form-btn").click(function()
+    {
+    //  alert("Your request has been sent! Thank You!");
+      $('form#forrm').trigger("reset");
+      $('#redeem-modal').modal('show');
+      return false;
+    });
+
+
+
     $('#birth-date-form-input').datepicker({
         format: 'mm/dd/yyyy'
     });
@@ -19,9 +29,18 @@ $(document).ready(function()
       $("#multiple_input_group").change(function(){
 
         //get just filename from full path
-    
+
         $("#file-name").html($("#multiple_input_group").val().replace(/^.*[\\\/]/, ''));
-    
+
+      });
+
+
+      $("#multiple_input_group2").change(function(){
+
+        //get just filename from full path
+
+        $("#file-name2").html($("#multiple_input_group2").val().replace(/^.*[\\\/]/, ''));
+
       });
 
 

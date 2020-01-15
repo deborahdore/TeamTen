@@ -457,6 +457,9 @@ $(document).ready(function(){
 
         //update dataTable
         $('#example').DataTable().draw();
+        //
+        $("#problem-title").val("");
+        $("#problem-description").val("");
    }else{
 
      $("#message-modal").modal();
