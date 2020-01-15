@@ -1,9 +1,18 @@
+var changed = false;
+
 const changeFontSize = (incr) => {
-  $("div").children().each(function () {
-    var fontSize = parseInt($(this).css('font-size'), 10);
-    fontSize += incr;
-    $(this).css('font-size', fontSize + 'px');
-  })
+  $("#buttons").children().each(function () {
+    if(changed){
+      $(this).css('font-size', '16px');
+   }else{
+       $(this).css('font-size', '18px');
+   }
+ });
+ if(changed){
+   changed = false;
+ }else{
+   changed = true;
+ }
 }
 
 $(document).ready(function () {
@@ -51,14 +60,14 @@ $(document).ready(function () {
   })
 
 
-  
+
    $("#chat-button").click(() => {
     if(isCityHall === "true"){
       window.location.href="chat_hall.html";
      }else{
        window.location.href="chat_mobile.html";
      }
-      
+
    })
     $("#make-poll-button").click(() => {
       if(isCityHall === "true"){
@@ -69,4 +78,3 @@ $(document).ready(function () {
    })
 
 })
-

@@ -43,15 +43,37 @@
                             <i id="register-volunteer-back-button" class="fas fa-2x fa-arrow-circle-left"></i>
                       </div>
 
+
+
+
+											<!-- Modal -->
+	                    <div class="modal fade" id="redeem-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	                      <div class="modal-dialog" role="document">
+	                        <div class="modal-content">
+	                          <div class="modal-header">
+	                            <h5 class="modal-title" id="exampleModalLabel">Sent!</h5>
+	                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                              <span aria-hidden="true">&times;</span>
+	                            </button>
+	                          </div>
+	                          <div  class="modal-body">
+	                               Your request has been sent!
+	                          </div>
+	                        </div>
+	                      </div>
+	                    </div>
+
+
+
                     <div class="p-5">
 
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Registration form</h1>
                             </div>
 
-                        <form>
+                        <form id="forrm">
                                 <div class="row my-2">
-                                    
+
                                         <label for="name-form-input">Full Name</label>
                                         <input type=text class="form-control" id="name-form-input"
                                         placeholder="Popescu Ion"
@@ -71,7 +93,7 @@
                                 </div>
 
                                 <div class="row my-2">
-                                        
+
                                                 <label for="telephone-form-input">Telephone</label>
                                                 <input type=text class="form-control" id="telephone-form-input"
                                                 placeholder="07XXXXXXXX"
@@ -80,34 +102,34 @@
 
 
                                 </div>
-        
+
                                 <div class="row my-2">
                                   <div class="input-group">
 
                                     <span class="input-group-btn">
-          
+
                                       <label class="btn btn-info btn-file" for="multiple_input_group"><span id="file-name">	</span>
-          
-                                        <div class="input required"><input id="multiple_input_group" type="file" multiple></div> Select Photo with ID card
-          
+
+                                        <div class="input required"><input id="multiple_input_group" type="file" multiple></div> Upload ID card
+
                                       </label>
-          
+
                                     </span>
                                   </div>
                                 </div>
 
                                 <div class="row my-2">
-                                    
+
                                         <label for="address-form-input">Address</label>
                                         <input type=text class="form-control" id="address-form-input"
                                         placeholder="Str. Observatorului, nr. 75 ..."
                                         onfocus="this.placeholder=''"
                                         onblur="this.placeholder='Str. Observatorului, nr. 75 ...'">
-                                    
+
                                 </div>
 
                                 <div class="row my-2">
-                                        
+
                                             <label for="email-form-input">Email</label>
                                             <input type=email class="form-control" id="email-form-input"
                                             placeholder="ion.popescu@gmail.com"
@@ -122,10 +144,10 @@
                                                 onfocus="this.placeholder=''"
                                                 onblur="this.placeholder='Password'">
                               </div>
-                                
+
 
                                 <div class="row my-2">
-                                        
+
                                             <label for="category-form-input">Category</label>
                                             <select  class="form-control" id="category-form-input">
                                                 <option selected>Select a category</option>
@@ -141,16 +163,16 @@
                                   <div class="input-group">
 
                                     <span class="input-group-btn">
-          
-                                      <label class="btn btn-info btn-file" for="multiple_input_group"><span id="file-name">	</span>
-          
-                                        <div class="input required"><input id="multiple_input_group" type="file" multiple></div> CV and/or certificates
-          
+
+                                      <label class="btn btn-info btn-file" for="multiple_input_group"><span id="file-name2">	</span>
+
+                                        <div class="input required"><input id="multiple_input_group2" type="file" multiple></div> CV and/or certificates
+
                                       </label>
-          
+
                                     </span>
                                   </div>
-                                </div>       
+                                </div>
 
 
                                 <div class="row form-check my-2">
@@ -162,12 +184,12 @@
 
                                 <div class="row form-check my-2">
                                   <row>
-                                    <button type="submit" class="btn btn-primary float-left" id="submit-form-btn">Submit</button>
+                                    <button   data-toggle="modal" data-target="#redeem-modal" class="btn btn-primary float-left" id="submit-form-btn">Submit</button>
                                     <button type="reset" class="btn btn-danger float-right" id="clear-form-btn">Clear</button>
                                 </row>
                               </div>
 
-                                
+
                         </form>
 
                     </div>

@@ -57,29 +57,29 @@ $(document).ready(function(){
                   <table id="example" class="table table-striped table-bordered">
                           <thead>
                               <tr>
-                                  <th>Pass</th>
-                                  <th>Up vote</th>
-                                  <th>Down vote</th>
-                                  <th>Your vote</th>
-                                  <th>Date</th>
+                                  <th style="font-size:12px">Pass</th>
+                                  <th style="font-size:12px">Up vote</th>
+                                  <th style="font-size:12px">Down vote</th>
+                                  <th style="font-size:12px">Your vote</th>
+                                  <th style="font-size:12px">Date</th>
                               </tr>
                           </thead>
                           <tbody id="problems-table-body">
                               <tr>
-                                  <td>12345</td>
+                                  <td>123</td>
                                   <td  id="up-1">10</td>
                                   <td  id="down-1">-7</td>
                                   <td><i id="upvote-1"  class="upvote fas fa-arrow-up mr-2"></i>
                                   <i id="downvote-1"  class="downvote fas fa-arrow-down"></i></td>
-                                  <td>8/10/2019</td>
+                                  <td style="font-size:12px">8/10/2019</td>
                               </tr>
                               <tr>
-                                  <td>43210</td>
+                                  <td>432</td>
                                   <td id="up-2">2</td>
                                   <td id="down-2">-130</td>
                                   <td><i id="upvote-2"  class="upvote fas fa-arrow-up mr-2"></i>
                                   <i id="downvote-2"  class="downvote fas fa-arrow-down"></i></td>
-                                  <td>8/10/2019</td>
+                                  <td style="font-size:12px">8/10/2019</td>
                               </tr>
                       </table>
 
