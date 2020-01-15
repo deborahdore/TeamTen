@@ -30,10 +30,6 @@ $(document).ready(function(){
     window.location.href="home_android.html";
   });
 
-  $("#find-nearby-problem-button").click(function(){
-    window.location.href="nearby_problems.html";
-  });
-
   $("#multiple_input_group").change(function(){
     //get just filename from full path
     $("#file-name").html($("#multiple_input_group").val().replace(/^.*[\\\/]/, ''));
